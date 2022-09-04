@@ -66,14 +66,14 @@ include_once(__DIR__ . "/../routes/header.php");
  * ------------------------------------------------------------------------------
  **/
 
-LionSQL\Drivers\MySQLDriver::init([
-    'host' => env->DB_HOST,
-    'port' => env->DB_PORT,
-    'db_name' => env->DB_NAME,
-    'user' => env->DB_USER,
-    'password' => env->DB_PASSWORD,
-    'charset' => env->DB_CHARSET
-]);
+// LionSQL\Drivers\MySQLDriver::init([
+//     'host' => env->DB_HOST,
+//     'port' => env->DB_PORT,
+//     'db_name' => env->DB_NAME,
+//     'user' => env->DB_USER,
+//     'password' => env->DB_PASSWORD,
+//     'charset' => env->DB_CHARSET
+// ]);
 
 /**
  * ------------------------------------------------------------------------------
