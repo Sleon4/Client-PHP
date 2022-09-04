@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Lion-Framework
 
 A simple and easy to use PHP framework
@@ -328,6 +327,3 @@ web: vendor/bin/heroku-php-apache2 public/
 ## License
 
 Copyright © 2022 [MIT License](https://github.com/Sleon4/Lion-Framework/blob/main/LICENSE)
-=======
-# Client-PHP
->>>>>>> d2ccafb9e0bad9f8441acb773b00ab3e7440fc71
