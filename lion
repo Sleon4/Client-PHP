@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * ------------------------------------------------------------------------------
+ * Register The Auto Loader
+ * ------------------------------------------------------------------------------
+ * Composer provides a convenient, automatically generated class loader for
+ * this application
+ * ------------------------------------------------------------------------------
+ **/
+
+require_once("vendor/autoload.php");
+
+/**
+ * ------------------------------------------------------------------------------
+ * Register environment variable loader automatically
+ * ------------------------------------------------------------------------------
+ * .dotenv provides an easy way to access environment variables with $_ENV
+ * ------------------------------------------------------------------------------
+ **/
+
+(Dotenv\Dotenv::createImmutable(__DIR__))->load();
+define('env', (object) $_ENV);
+
+/**
+ * ------------------------------------------------------------------------------
+ * Import route for RSA
+ * ------------------------------------------------------------------------------
+ * Load default route for RSA
+ * ------------------------------------------------------------------------------
+ **/
+
+if (env->RSA_URL_PATH != '') {
+    LionSecurity\RSA::$url_path = env->RSA_URL_PATH;
+}
+
+/**
+ * ------------------------------------------------------------------------------
+ * Console Routes
+ * ------------------------------------------------------------------------------
+ * This is where you can record your commands for your application
+ * ------------------------------------------------------------------------------
+ **/
+
+$commands = include_once("routes/console.php");
+
+LionCommand\SystemCommand::init([
+	LionCommand\Command\ControllerCommand::class,
+    LionCommand\Command\ModelCommand::class,
+    LionCommand\Command\MiddlewareCommand::class,
+    LionCommand\Command\CommandsCommand::class,
+    LionCommand\Command\CapsuleCommand::class,
+    LionCommand\Command\TestCommand::class,
+    LionCommand\Command\ServerCommand::class,
+    LionCommand\Command\RunTestCommand::class,
+    LionCommand\Command\RulesCommand::class,
+    ...$commands
+]);
