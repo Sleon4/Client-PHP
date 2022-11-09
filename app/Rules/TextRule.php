@@ -4,7 +4,7 @@ namespace App\Rules;
 
 use App\Traits\Framework\DisplayErrors;
 
-class EmailRule {
+class TextRule {
 
 	use DisplayErrors;
 
@@ -12,10 +12,14 @@ class EmailRule {
 
 	}
 
-	public function passes(): EmailRule {
+	public function passes(): TextRule {
 		$this->validateRules([
-			'required' => ["users_email"],
-			'email' => ["users_email"]
+			'required' => [
+				['text']
+			],
+			'lengthMin' => [
+				['text', 1]
+			]
 		]);
 
 		return $this;

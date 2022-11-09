@@ -67,12 +67,12 @@ include_once(__DIR__ . "/../routes/header.php");
  **/
 
 // LionSQL\Drivers\MySQLDriver::init([
+//     'type' => env->DB_TYPE,
 //     'host' => env->DB_HOST,
 //     'port' => env->DB_PORT,
-//     'db_name' => env->DB_NAME,
+//     'dbname' => env->DB_NAME,
 //     'user' => env->DB_USER,
-//     'password' => env->DB_PASSWORD,
-//     'charset' => env->DB_CHARSET
+//     'password' => env->DB_PASSWORD
 // ]);
 
 /**
@@ -83,17 +83,17 @@ include_once(__DIR__ . "/../routes/header.php");
  * ------------------------------------------------------------------------------
  **/
 
-LionMailer\Mailer::init([
-    'info' => [
-        'debug' => (int) env->MAIL_DEBUG,
-        'host' => env->MAIL_HOST,
-        'port' => (int) env->MAIL_PORT,
-        'email' => env->MAIL_EMAIL,
-        'password' => env->MAIL_PASSWORD,
-        'user_name' => env->MAIL_USER_NAME,
-        'encryption' => env->MAIL_ENCRYPTION === 'false' ? false : (env->MAIL_ENCRYPTION === 'true' ? true : false)
-    ]
-]);
+// LionMailer\Mailer::init([
+//     'info' => [
+//         'debug' => (int) env->MAIL_DEBUG,
+//         'host' => env->MAIL_HOST,
+//         'port' => (int) env->MAIL_PORT,
+//         'email' => env->MAIL_EMAIL,
+//         'password' => env->MAIL_PASSWORD,
+//         'user_name' => env->MAIL_USER_NAME,
+//         'encryption' => env->MAIL_ENCRYPTION === 'false' ? false : (env->MAIL_ENCRYPTION === 'true' ? true : false)
+//     ]
+// ]);
 
 /**
  * ------------------------------------------------------------------------------
